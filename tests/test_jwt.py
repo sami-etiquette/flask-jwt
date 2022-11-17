@@ -193,7 +193,7 @@ def test_custom_error_handler(client, jwt):
 def test_custom_response_handler(client, jwt, user):
     @jwt.auth_response_handler
     def resp_handler(access_token, identity):
-        return jsonify({'mytoken': access_token.decode('utf-8')})
+        return jsonify({'mytoken': access_token})
 
     resp, jdata = post_json(
         client, '/auth', {'username': user.username, 'password': user.password})

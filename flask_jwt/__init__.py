@@ -129,7 +129,7 @@ def _default_auth_request_handler():
 
 
 def _default_auth_response_handler(access_token, identity):
-    return jsonify({'access_token': access_token.decode('utf-8')})
+    return jsonify({'access_token': access_token})
 
 
 def _default_jwt_error_handler(error):
